@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
     <title>Reset Password</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
 </head>
 <body class="position-relative" style="background-image: url(/media/cite/loginback.jpg); background-size: cover; background-repeat: no-repeat; height: auto">
 <div id="app" class="mt-0 pt-5">
@@ -42,14 +42,15 @@
                 </h3>
 
 
-                <form method="POST" action="{{ route('password.email') }}" dir="ltr" class="px-5" style="width: 100%;">
-                    @csrf
+                <form method="POST" action="<?php echo e(route('password.email')); ?>" dir="ltr" class="px-5" style="width: 100%;">
+                    <?php echo csrf_field(); ?>
 
-                    @if (session('status'))
+                    <?php if(session('status')): ?>
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            <?php echo e(session('status')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
                     <div class="px-2 py-1 mb-2"
                          style="background-color: rgba(117, 122, 142, 0.5)">
 
@@ -59,7 +60,11 @@
                         </div>
                         <div class="d-inline-block position-relative" style="width: 90%">
                             <input id="email" type="email" name="email"
-                                   class="form-control position-absolute loginregisterinput @error('email') is-invalid @enderror"
+                                   class="form-control position-absolute loginregisterinput <?php if ($errors->has('email')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('email'); ?> is-invalid <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>"
                                    required autocomplete="email" autofocus
                                    placeholder="Email">
 
@@ -99,3 +104,4 @@
 </body>
 </html>
 
+<?php /**PATH F:\web\2-98\machine\resources\views/auth/passwords/email.blade.php ENDPATH**/ ?>

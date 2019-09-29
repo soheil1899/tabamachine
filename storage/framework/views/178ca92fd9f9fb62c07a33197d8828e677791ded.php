@@ -97,4 +97,4 @@
 
 
 </script>
-<?php /**PATH /home/somo/Desktop/website/machine/resources/views/layouts/admin/aside.blade.php ENDPATH**/ ?>
+<?php /**PATH F:\web\2-98\machine\resources\views/layouts/admin/aside.blade.php ENDPATH**/ ?>

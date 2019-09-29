@@ -20,6 +20,10 @@ Auth::routes();
 
 
 
+Route::namespace('Admin')->middleware(['auth', 'CheckAdmin'])->group(function () {
+    Route::get('/dashboard', 'AdminController@index')->name('admin');
+
+});
 
 
 
@@ -38,11 +42,9 @@ Route::prefix('{lang?}')->namespace('Client')->middleware('Langswitch')->group(f
 
 
 
-
 // dashboard
 Route::prefix('dashboard')->namespace('Admin')->middleware(['auth', 'CheckAdmin'])->group(function () {
 
-    Route::get('/index', 'AdminController@index')->name('admin');
 
 
     Route::get('/changemyinfo', 'AdminController@getmyinfo')->name('changemyinfo');

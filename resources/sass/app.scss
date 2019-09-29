@@ -19,6 +19,58 @@
     url('/admin/fonts/IranSanse.ttf') format('truetype');/* Safari, Android, iOS */
 }
 
+//-----------------login
+.loginregisterinput {
+  top: -29px;
+  left: 0;
+  background-color: transparent !important;
+  border: none;
+  color: #eee !important;
+}
+.loginregisterinput:focus , .loginregisterinput:active{
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent !important;
+  color: #eee !important;
+}
+
+.loginregisterinput::placeholder {
+  color: #bbb;
+}
+.logintext{
+  color: #bbb;
+}
+.forgetpass:hover{
+  color: yellow;
+  text-decoration: none;
+}
+.loginregister:hover{
+  color: lawngreen;
+  text-decoration: none;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid #fff;
+  display: inline-block;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-right: 60px solid #fff;
+  display: inline-block;
+}
+
+body, html{
+  height: 100% !important;
+}
 
 table th, td {
     text-align: center;

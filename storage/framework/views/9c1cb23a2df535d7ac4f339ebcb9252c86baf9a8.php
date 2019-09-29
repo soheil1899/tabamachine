@@ -134,4 +134,4 @@
 <?php echo $__env->yieldContent('script'); ?>
 
 </html>
-<?php /**PATH /home/somo/Desktop/website/machine/resources/views/layouts/admin/master.blade.php ENDPATH**/ ?>
+<?php /**PATH F:\web\2-98\machine\resources\views/layouts/admin/master.blade.php ENDPATH**/ ?>
